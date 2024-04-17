@@ -33,7 +33,11 @@ class MainActivity : ComponentActivity() {
                     val navHostController = rememberNavController()
                     AppDrawer(onDrawerModalSelected = {
                         selectedId = it.id
-                        navHostController.navigate(it.id)
+                        navHostController.navigate(it.id){
+                            popUpTo(DrawerData.drawerModalData().first().id){
+                                inclusive = true
+                            }
+                        }
                     }, selectedItem = selectedId) {
                         AppNavigation(navHostController = navHostController)
                     }

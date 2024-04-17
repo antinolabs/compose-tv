@@ -6,6 +6,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Text
+import com.nameisjayant.composetv.feature.home.ui.screens.HomeScreen
 
 
 @OptIn(ExperimentalTvMaterial3Api::class)
@@ -16,7 +17,7 @@ fun AppNavigation(
     NavHost(navController = navHostController, startDestination = NavigationScreen.Home.route ){
 
         composable(NavigationScreen.Home.route){
-            Text(text = "Home Screen")
+            HomeScreen()
         }
         composable(NavigationScreen.Movie.route){
             Text(text = "Movie Screen")
